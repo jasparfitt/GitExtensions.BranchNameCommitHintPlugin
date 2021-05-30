@@ -54,6 +54,7 @@
     <PropertyGroup>
       <NuspecProperties>
         id=$(PackageId);
+        title=$(Title);
         version=$(PackageVersion);
         configuration=$(Configuration);
         tags=$(PackageTags.Replace(';',' '));
