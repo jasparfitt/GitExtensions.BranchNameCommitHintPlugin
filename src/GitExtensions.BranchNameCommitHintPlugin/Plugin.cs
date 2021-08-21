@@ -184,6 +184,7 @@ namespace GitExtensions.BranchNameCommitHintPlugin
                 CurrentMessages.Add(new CommitMessage(branchId + " style: ", Resources.Style));
                 CurrentMessages.Add(new CommitMessage(branchId + " refactor: ", Resources.Refactor));
                 CurrentMessages.Add(new CommitMessage(branchId + " test: ", Resources.Test));
+                CurrentMessages.Add(new CommitMessage(branchId + " WIP: ", Resources.WIP));
             }
 
             if (CustomEnabledSetting.ValueOrDefault(Settings))
