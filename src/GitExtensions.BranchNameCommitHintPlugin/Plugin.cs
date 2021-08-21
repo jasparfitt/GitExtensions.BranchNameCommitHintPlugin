@@ -15,14 +15,14 @@ namespace GitExtensions.BranchNameCommitHintPlugin
         private const string DefaultFormat = "{0} your message";
         private const string DefaultRegex = @"(([a-z]|[A-Z]|[0-9])+-([0-9])+)\w";
 
-        private readonly BoolSetting EnabledSetting = new BoolSetting("Plugin enabled", false);
+        private readonly BoolSetting EnabledSetting = new BoolSetting("Plugin enabled", true);
         private readonly PseudoSetting RegexInfo = new PseudoSetting("The regex used to parse the key from your branch name");
         private readonly StringSetting RegexStringSetting = new StringSetting("Regex", "Regex", DefaultRegex, true);
         private readonly PseudoSetting PlainInfo = new PseudoSetting("Enables a commit template with only the branch key");
         private readonly BoolSetting PlainEnabledSetting = new BoolSetting("Plain branch key", false);
         private readonly PseudoSetting SemanticInfo1 = new PseudoSetting("Enables a set of commit templates with the branch key followed by a common semantic types.");
         private readonly PseudoSetting SemanticInfo2 = new PseudoSetting("For example \"ABC-123 feat: \"");
-        private readonly BoolSetting SemanticEnabledSetting = new BoolSetting("Semantic branch key", false);
+        private readonly BoolSetting SemanticEnabledSetting = new BoolSetting("Semantic branch key", true);
         private readonly PseudoSetting CustomInfo = new PseudoSetting("Enables the custom commit templates defined below, the branch key gets substituted for {0}");
         private readonly BoolSetting CustomEnabledSetting = new BoolSetting("Custom branch key", false);
         private readonly List<StringSetting> CustomTemplateSettings;
@@ -58,10 +58,7 @@ namespace GitExtensions.BranchNameCommitHintPlugin
 
         public override bool Execute(GitUIEventArgs args)
         {
-            if (!EnabledSetting.ValueOrDefault(Settings))
-            {
-                args.GitUICommands.StartSettingsDialog(this);
-            }
+            args.GitUICommands.StartSettingsDialog(this);
 
             return false;
         }
