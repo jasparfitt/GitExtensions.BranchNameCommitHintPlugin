@@ -8,6 +8,10 @@ The key extracted from the branch name can be set on it's own as a commit templa
 
 The package is published on [NuGet.org](https://www.nuget.org/packages/GitExtensions.BranchNameCommitHintPlugin) feed.
 This package is based on the plugin template [here](https://github.com/gitextensions/gitextensions.plugintemplate)
+### Installation Instructions
+Open the plugin manager in GitExtensions and search for this plugin, click install. Once installed open the "Plugins" menu and click "Branch Commit Hint" to open the settings.
+
+Here you can enable/disable and configure the plugin. You can set the regex used to parse the branch name, by default it is set to find JIRA references. You can also choose which templates you want enabled, by default a set of semantic messages are enabled but you can also add a plain message or custom messages.
 ### For Development
  - There's powershell script to download a selected version of Git Extensions from GitHub releases. This script runs before every build and checks if Git Extensions binaries are donwloaded.
  - CSproj references selected binaries from the downloaded Git Extensions.
