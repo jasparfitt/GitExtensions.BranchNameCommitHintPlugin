@@ -333,3 +333,5 @@ references/
 
 # Git Extensions specific files
 GitExtensions.settings.backup
+
+/gitextensions.shared
