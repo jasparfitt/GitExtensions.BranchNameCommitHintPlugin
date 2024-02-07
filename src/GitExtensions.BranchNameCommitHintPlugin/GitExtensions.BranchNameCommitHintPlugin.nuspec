@@ -9,11 +9,13 @@
     <license type="expression">MIT</license>
     <projectUrl>$projectUrl$</projectUrl>
     <tags>$tags$</tags>
+    <readme>docs\README.md</readme>
     <dependencies>
       <dependency id="GitExtensions.Extensibility" version="[0.3,1.0)" />
     </dependencies>
   </metadata>
-  <files>
+  <files> 
+	<file src="..\..\README.md" target="docs\" />
     <file src="$targetDir$$id$.dll" target="/lib" />
     <file src="$targetDir$$id$.pdb" target="/lib" />
   </files>

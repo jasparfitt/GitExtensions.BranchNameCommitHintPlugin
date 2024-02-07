@@ -6,7 +6,7 @@
     <VersionPrefix>1.2.0</VersionPrefix>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup>	
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -52,7 +52,11 @@
     <Description>A plugin for GitExtenstions that uses the branch name to create a set of commit templates.</Description>
     <PackageProjectUrl>https://github.com/jasparfitt/GitExtensions.BranchNameCommitHintPlugin</PackageProjectUrl>
     <PackageTags>GitExtensions</PackageTags>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
   <Target Name="SetPackageProperties" BeforeTargets="GenerateNuspec">
     <PropertyGroup>
       <NuspecProperties>
