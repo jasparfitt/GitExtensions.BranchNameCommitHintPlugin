@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net6-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
     <VersionPrefix>1.1.2</VersionPrefix>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
@@ -18,13 +19,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitExtensions.Extensibility" Version="0.3.0.57" />
+    <PackageReference Include="GitExtensions.Extensibility" Version="0.3.2.*" />
   </ItemGroup>
 
   <!--SourceLink support: https://github.com/dotnet/sourcelink -->
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <!--<PackageReference Include="System.Drawing.Common" Version="6.0.0" />-->
+    <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" />
     <!--<PackageReference Include="Microsoft.SourceLink.AzureRepos.Git" Version="1.0.0" PrivateAssets="All"/>-->
     <!--<PackageReference Include="Microsoft.SourceLink.AzureDevOpsServer.Git" Version="1.0.0" PrivateAssets="All"/>-->
     <!--<PackageReference Include="Microsoft.SourceLink.GitLab" Version="1.0.0" PrivateAssets="All"/>-->
@@ -39,8 +41,8 @@
     <Reference Include="ResourceManager">
       <HintPath>$(GitExtensionsPath)\ResourceManager.dll</HintPath>
     </Reference>
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.Windows.Forms" />
+    <!--<Reference Include="System.ComponentModel.Composition" />-->
+    <!--<Reference Include="System.Windows.Forms" />-->
   </ItemGroup>
 
   <!-- Pack as .nupkg with dependency on GitExtensions.Extensibility -->
