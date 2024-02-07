@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <VersionPrefix>1.1.2</VersionPrefix>
+    <VersionPrefix>1.2.0</VersionPrefix>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
