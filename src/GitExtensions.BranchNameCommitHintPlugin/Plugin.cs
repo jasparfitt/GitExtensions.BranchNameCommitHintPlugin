@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Windows.Forms;
-using GitUIPluginInterfaces;
-using ResourceManager;
 using GitExtensions.BranchNameCommitHintPlugin.Properties;
 using System.Text.RegularExpressions;
 using System.Drawing;
+using GitExtensions.Extensibility.Plugins;
+using GitExtensions.Extensibility.Settings;
+using GitExtensions.Extensibility.Git;
+using GitCommands;
 
 namespace GitExtensions.BranchNameCommitHintPlugin
 {
     [Export(typeof(IGitPlugin))]
+    [Export(typeof(IGitPluginForRepository))]
     public class Plugin : GitPluginBase, IGitPluginForRepository
     {
         private const string DefaultFormat = "{0} your message";
@@ -33,8 +36,10 @@ namespace GitExtensions.BranchNameCommitHintPlugin
 
         public Plugin() : base(true)
         {
+            Id = new System.Guid("430b2a7a-2fa8-4cb4-bd79-2d359a524d78");
             SetNameAndDescription("Branch Commit Hint");
-            Translate();
+            Description = "Branch Commit Hint";
+            Translate(AppSettings.CurrentTranslation);
             Icon = Resources.Branch;
             CustomTemplateSettings = new List<StringSetting>()
             {
