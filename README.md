@@ -13,7 +13,7 @@ Open the plugin manager in GitExtensions and search for this plugin, click insta
 
 Here you can enable/disable and configure the plugin. You can set the regex used to parse the branch name, by default it is set to find JIRA references. You can also choose which templates you want enabled, by default a set of semantic messages are enabled but you can also add a plain message or custom messages.
 ### For Development
- - There's powershell script to download a selected version of Git Extensions from GitHub releases. This script runs before every build and checks if Git Extensions binaries are donwloaded.
+ - There's a powershell script to download a selected version of Git Extensions from GitHub releases. This script runs before every build and checks if Git Extensions binaries are donwloaded.
  - CSproj references selected binaries from the downloaded Git Extensions.
  - After build a newly created binaries of the plugin is copied to Git Extensions plugins directory.
  - F5 is setup to start downloaded `GitExtensions.exe` for easy debugging.

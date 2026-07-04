@@ -1,13 +1,13 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Windows.Forms;
+﻿using GitCommands;
 using GitExtensions.BranchNameCommitHintPlugin.Properties;
-using System.Text.RegularExpressions;
-using System.Drawing;
+using GitExtensions.Extensibility.Git;
 using GitExtensions.Extensibility.Plugins;
 using GitExtensions.Extensibility.Settings;
-using GitExtensions.Extensibility.Git;
-using GitCommands;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.Drawing;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace GitExtensions.BranchNameCommitHintPlugin
 {
@@ -20,7 +20,7 @@ namespace GitExtensions.BranchNameCommitHintPlugin
 
         private readonly BoolSetting EnabledSetting = new BoolSetting("Plugin enabled", true);
         private readonly PseudoSetting RegexInfo = new PseudoSetting("The regex used to parse the key from your branch name");
-        private readonly StringSetting RegexStringSetting = new StringSetting("Regex", "Regex", DefaultRegex, true);
+        private readonly StringSetting RegexStringSetting = new StringSetting("Regex", "Regex", DefaultRegex);
         private readonly PseudoSetting PlainInfo = new PseudoSetting("Enables a commit template with only the branch key");
         private readonly BoolSetting PlainEnabledSetting = new BoolSetting("Plain branch key", false);
         private readonly PseudoSetting SemanticInfo1 = new PseudoSetting("Enables a set of commit templates with the branch key followed by a common semantic types.");
@@ -43,7 +43,7 @@ namespace GitExtensions.BranchNameCommitHintPlugin
             Icon = Resources.Branch;
             CustomTemplateSettings = new List<StringSetting>()
             {
-                new StringSetting("Message Template 1", "Message Template", DefaultFormat, true),
+                new StringSetting("Message Template 1", "Message Template", DefaultFormat),
                 new StringSetting("Message Template 2", "Message Template", ""),
                 new StringSetting("Message Template 3", "Message Template", ""),
                 new StringSetting("Message Template 4", "Message Template", ""),
