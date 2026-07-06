@@ -15,7 +15,7 @@
     </dependencies>
   </metadata>
   <files> 
-	<file src="..\..\README.md" target="docs\" />
+    <file src="..\..\README.md" target="docs\" />
     <file src="$targetDir$$id$.dll" target="/lib" />
     <file src="$targetDir$$id$.pdb" target="/lib" />
   </files>
